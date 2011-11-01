@@ -1,0 +1,7 @@
+base hiddenSwitch
+author Guillaume Turri
+email guillaume.turri@gmail.com
+date 2011-11-31
+name hidden switch Plugin
+desc Create a global switch for the plugin hidden
+url http://www.dokuwiki.org/plugin:hiddenSwitch
