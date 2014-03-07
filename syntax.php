@@ -18,7 +18,7 @@ class syntax_plugin_hiddenSwitch extends DokuWiki_Syntax_Plugin {
   }
 
   function connectTo($mode) {
-    $this->Lexer->addEntryPattern('<hiddenSwitch.*>', $mode,'plugin_hiddenSwitch');
+    $this->Lexer->addSpecialPattern('<hiddenSwitch[^>]*>', $mode,'plugin_hiddenSwitch');
   }
 
   function handle($match, $state, $pos, &$handler) {
