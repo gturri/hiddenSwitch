@@ -21,7 +21,7 @@ class syntax_plugin_hiddenSwitch extends DokuWiki_Syntax_Plugin {
     $this->Lexer->addSpecialPattern('<hiddenSwitch[^>]*>', $mode,'plugin_hiddenSwitch');
   }
 
-  function handle($match, $state, $pos, &$handler) {
+  function handle($match, $state, $pos, Doku_Handler $handler) {
       $return = array('text' => $this->getLang('default'));
       $match = trim(utf8_substr($match, 14, -1)); //14 = strlen("<hiddenSwitch ")
       if ( $match !== '' ){
@@ -31,7 +31,7 @@ class syntax_plugin_hiddenSwitch extends DokuWiki_Syntax_Plugin {
       return $return;
   } // handle()
 
-  function render($mode, &$renderer, $data) {
+  function render($mode, Doku_Renderer $renderer, $data) {
     if($mode == 'xhtml'){
         $renderer->doc .= '<input type="button" class="button hiddenSwitch" value="' . $data['text'] . '" />';
       return true;
